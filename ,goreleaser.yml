@@ -1,0 +1,32 @@
+builds:
+  - binary: askcloudhelloworld
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -mod=vendor
+
+release:
+  prerelease: auto
+
+universal_binaries:
+  - replace: true
+
+brews:
+  -
+    name: CLI-app
+    homepage: https://github.com/ritikchawla/Golang-Projects/CLI-app
+    tap:
+      owner: ritikchawla
+      name: home-ritikchawla
+    commit_author:
+      name: ritik
+      email: ritikchawla2014@gmail.com
+
+checksum:
+  name_template: 'checksums.txt'
